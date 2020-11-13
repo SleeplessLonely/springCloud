@@ -7,9 +7,9 @@ eureka:
   instance:
     hostname: localhost
   client:
-    # ÓÉÓÚ¸ÃÓ¦ÓÃÎª×¢²áÖĞĞÄ£¬ËùÒÔÉèÖÃÎª false ´ú±í²»ÏòÍô²áÖĞĞÄ×¢²á×Ô¼º
+    # ç”±äºè¯¥åº”ç”¨ä¸ºæ³¨å†Œä¸­å¿ƒï¼Œæ‰€ä»¥è®¾ç½®ä¸º false ä»£è¡¨ä¸å‘æ±ªå†Œä¸­å¿ƒæ³¨å†Œè‡ªå·±
     register-with-eureka: false
-    # ÓÉÓÚ×¢²áÖĞĞÄµÄÖ°Ôğ¾ÍÊÇÎ¬»¤·şÎñÊµÀı Ëû²¢²»ĞèÒªÈ¥¼ìË÷·şÎñ£¬ËùÒÔÒ²ÉèÖÃÎª false
+    # ç”±äºæ³¨å†Œä¸­å¿ƒçš„èŒè´£å°±æ˜¯ç»´æŠ¤æœåŠ¡å®ä¾‹ ä»–å¹¶ä¸éœ€è¦å»æ£€ç´¢æœåŠ¡ï¼Œæ‰€ä»¥ä¹Ÿè®¾ç½®ä¸º false
     fetch-registry: false
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
