@@ -1,10 +1,10 @@
 package com.example.ribbonconsumer.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
+
+import com.example.ribbonconsumer.service.HelloService;
 
 /**
  * <li>Title:</li>
@@ -18,12 +18,12 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 public class ConsumerController {
     @Autowired
-    RestTemplate restTemplate;
+    HelloService helloService;
     @GetMapping(value="/ribbonConsumer" )
     public String helloConsumer(){
-    	ResponseEntity<String> forEntity = restTemplate.getForEntity("http://EUREKA-CLIENT/hello",String.class);
-    	String body = forEntity.getBody();
-    	System.out.println(body);
-        return body;
+//    	ResponseEntity<String> forEntity = restTemplate.getForEntity("http://EUREKA-CLIENT/hello",String.class);
+//    	String body = forEntity.getBody();
+//        return body;
+    	return helloService.helloService();
     }
 }

@@ -8,7 +8,7 @@ import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
-@SpringBootApplication(scanBasePackages = "com.example.ribbonconsumer.controller")
+@SpringBootApplication
 @EnableDiscoveryClient
 @EnableCircuitBreaker
 public class RibbonConsumerApplication {
