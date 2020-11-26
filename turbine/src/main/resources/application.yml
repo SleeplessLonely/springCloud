@@ -6,13 +6,18 @@ server:
 management:
   server:
     port: 8990
+  endpoints:
+    web:
+      exposure:
+        include: '*'
 eureka:
   client:
     service-url:
       default-zone: http://localhost:8761/eureka/
 turbine:
-  app-config: RIBBON-CONSUMER
+  app-config: ribbo-consumer
   # 集群名称
-  cluster-name-expression: "default"
+  cluster-name-expression: new String("default")
   # 让同一主机上的服务通过主机名与端口号的组合来进行区分
   combine-host-port: true
+#  instanceUrlSuffix: /hystrix.stream
