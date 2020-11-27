@@ -1,14 +1,17 @@
 spring:
   application:
-    name: ribbo-consumer
+    name: turbine
   rabbitmq:
     port: 5672
     username: guest
     password: guest
     host: localhost
 server:
-  port: 9000
+  port: 8989
+management:
+  server:
+    port: 8990
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      default-zone: http://localhost:8761/eureka/
