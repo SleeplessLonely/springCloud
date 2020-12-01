@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.example.demo.entity.User;
 
 @FeignClient("eureka-client")
-public interface HelloService {
+public interface HelloServiceParam {
 	@RequestMapping("/hello")
 	String hello();
 
