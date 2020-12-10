@@ -1,11 +1,23 @@
 spring:
   application:
     name: feign-consumer
-  main:
-    allow-bean-definition-overriding: true
+#  main:
+  #  allow-bean-definition-overriding: true
 server:
   port: 9001
 eureka:
   client:
     service-url:
-      default-zone: http://localhost:8761/eureka/
+      default-zone: http://localhost:8761/eureka
+feign:
+  client:
+    config:
+      feignName: eureka-client 
+      connect-timeout: 500
+      read-timeout: 2000
+  hystrix:
+    enabled: true
+# 配置时，ribbon开头的在yml里是不给提示的，不要以为不提示就是没效果，其实是可以用的
+ribbon:
+  ReadTimeout: 500
+  ConnectTimeout: 2000

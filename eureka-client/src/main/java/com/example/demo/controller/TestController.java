@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 import java.util.List;
+import java.util.Random;
 
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,8 +34,11 @@ public class TestController {
 	@Autowired
 	private DiscoveryClient client;
     @GetMapping("/hello")
-    public String hello(){
+    public String hello() throws InterruptedException{
     	ServiceInstance instance = serviceInstance();
+    	// 测试超时
+    	int sleepTime = new Random().nextInt(3000);
+    	Thread.sleep(sleepTime);
     	logger.info("/hello,host:port= "+ instance.getUri() + ", service_id= " + instance.getServiceId());
         return "/hello,host:port= "+ instance.getUri() + ", service_id= " + instance.getServiceId();
     }
